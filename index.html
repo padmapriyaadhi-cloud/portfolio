@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padma Priya | Full Stack Developer</title>
+    
+    <!-- Professional Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link newly structured CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Dynamic background effects behind everything -->
+    <div class="bg-effects">
+        <div class="perspective-grid"></div>
+        <div id="crystals-container"></div>
+        <canvas id="constellation-canvas"></canvas>
+        <div class="portal-flash" id="portal-flash"></div>
+    </div>
+
+    <div class="app-container">
+        
+        <!-- Animated Sidebar Structure -->
+        <aside class="sidebar glass fade-in-up">
+            
+            <div class="profile-section">
+                <!-- Circular rotating gradient border -->
+                <div class="profile-img-wrap">
+                    <img src="assets/WhatsApp Image 2026-04-05 at 2.00.07 PM.jpeg" alt="Padma Priya">
+                </div>
+                
+                <h1>Padma Priya A</h1>
+                <p class="role">Full Stack Developer</p>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-target="home">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home Overview
+                </button>
+                
+                <button class="nav-btn" data-target="background">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Background & Education
+                </button>
+
+                <button class="nav-btn" data-target="frontend">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    Frontend
+                </button>
+
+                <button class="nav-btn" data-target="backend">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg">
+                         <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                         <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                         <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                    Backend
+                </button>
+
+                <button class="nav-btn" data-target="iot">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line>
+                    </svg>
+                    IoT
+                </button>
+            </nav>
+            
+            <div style="flex: 1;"></div>
+            
+            <!-- Quick Contact Information -->
+            <div class="sidebar-contact text-muted" style="font-size: 0.85rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                <p style="margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <a href="mailto:padmapriyaadhi@gmail.com" style="color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24" height="1em" width="1em"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                        padmapriyaadhi@gmail.com
+                    </a>
+                </p>
+                <p style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <a href="tel:+919597389293" style="color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <svg stroke="currentColor" fill="currentColor" viewBox="0 0 24 24" height="1em" width="1em"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                        +91 9597389293
+                    </a>
+                </p>
+            </div>
+            
+        </aside>
+
+        <!-- Dynamic Main Content (Loaded via JS) -->
+        <!-- Main Content Area -->
+        <div style="flex: 1; margin-left: 320px; display: flex; flex-direction: column; min-height: 100vh;" class="content-wrapper">
+            <main class="main-content" id="main-container" style="margin-left: 0; flex: 1; width: 100%;">
+                <!-- Loading indicator initially -->
+                <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                     <div style="width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                </div>
+            </main>
+
+            <!-- Global Site Footer -->
+            <footer class="site-footer glass fade-in-up" style="padding: 6rem 2rem; margin-top: 10rem; border-top: 1px solid var(--border-color); min-height: fit-content; display: flex; align-items: flex-start; justify-content: center;">
+                <div style="display: flex; flex-wrap: wrap; gap: 4rem; max-width: 1200px; width: 100%; justify-content: space-between;">
+                    
+                    <!-- Left Side: Professional Summary & Resume -->
+                    <div style="flex: 1; min-width: 320px; max-width: 500px;">
+                        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 2rem;">Contact Me</h2>
+                        
+                        <a href="assets/Padma Priya A.pdf" target="_blank" class="action-btn resume-btn" style="display: inline-flex; text-decoration: none; margin-bottom: 2.5rem; justify-content: center;">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            View My Full Resume
+                        </a>
+
+                        <div class="social-links" style="gap: 1.5rem; margin-bottom: 2.5rem; justify-content: flex-start;">
+                            <a href="https://www.linkedin.com/in/padmapriyaadhi" target="_blank" class="social-btn" title="LinkedIn"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                            <a href="mailto:padmapriyaadhi@gmail.com" class="social-btn" title="Email Me"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                            <a href="https://github.com/padmapriyaadhi-cloud" target="_blank" class="social-btn" title="GitHub Project"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        </div>
+                        
+                        <p class="text-muted" style="margin-top: 1rem; font-size: 1.1rem; line-height: 1.5;">Full Stack Developer | Building Secure and Scalable Digital Experiences</p>
+                        <p class="text-muted mt-3" style="font-size: 0.9rem; opacity: 0.6;">&copy; 2026 Padma Priya. All rights reserved.</p>
+                    </div>
+
+                    <!-- Right Side: Contact Form -->
+                    <div style="flex: 1; min-width: 320px; max-width: 500px;">
+                        <h3 style="margin-bottom: 2rem; font-size: 2.5rem; color:white;">Ready to collaborate?</h3>
+                        <form action="https://formspree.io/f/padmapriyaadhi@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <input type="text" name="name" placeholder="Your Name" required class="glass" style="padding: 1.1rem; border-radius: 12px; color: #fff; width: 100%; border: 1px solid var(--border-color); outline: none; font-size: 1.1rem; background: rgba(255,255,255,0.05);">
+                            <input type="email" name="email" placeholder="Your Email ID" required class="glass" style="padding: 1.1rem; border-radius: 12px; color: #fff; width: 100%; border: 1px solid var(--border-color); outline: none; font-size: 1.1rem; background: rgba(255,255,255,0.05);">
+                            <input type="tel" name="phone" placeholder="Phone Number (Optional)" class="glass" style="padding: 1.1rem; border-radius: 12px; color: #fff; width: 100%; border: 1px solid var(--border-color); outline: none; font-size: 1.1rem; background: rgba(255,255,255,0.05);">
+                            <button type="submit" class="action-btn primary-action" style="width: 100%; justify-content: center; border: none; cursor: pointer; padding: 1.1rem; font-size: 1.1rem; margin-top: 0.5rem;">
+                                <span>Send Message</span>
+                                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1.2em" width="1.2em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        
+        <style>@keyframes spin { 100% { transform: rotate(360deg); } }</style>
+
+    </div>
+
+    <!-- Application Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

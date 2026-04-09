@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Professional Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 8080",
+    "dev": "npx http-server . -p 8080"
+  },
+  "author": "Padma Priya",
+  "license": "ISC"
+}

@@ -1,0 +1,81 @@
+<div class="page-container">
+    
+    <!-- Hero Section (Left-Aligned & Minimal + 3D Effects) -->
+    <section class="hero fade-in-up" style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left;">
+        <p class="hero-greeting" style="font-size: 1.25rem; color: var(--primary); font-weight: 600; letter-spacing: 2px; margin-bottom: 1rem;">HELLO, I AM</p>
+        <h2 class="hero-name" style="font-size: clamp(3.5rem, 8vw, 6.5rem); margin-bottom: 0.5rem; line-height: 1.1; color: #fff;">Padma Priya</h2>
+        
+        <div class="hero-role" data-role="Full Stack Developer" style="font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 2rem; min-height: 1.2em; min-width: 300px; display: inline-block;">
+            Full Stack Developer
+        </div>
+    </section>
+
+    <!-- About Me Section (Restored Info + 3D Cards) -->
+    <section class="about-section fade-in-up" style="padding: 6rem 0; text-align: center;">
+        <h2 class="section-title" style="justify-content: center;">About Me</h2>
+        
+        <div class="glass about-card-3d static-card" style="padding: 4rem; border-radius: 30px; text-align: left; margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; overflow: hidden; position: relative;">
+            <!-- Shine effect overlay -->
+            <div class="card-shine"></div>
+            
+            <div style="flex: 1; min-width: 250px; display: flex; justify-content: center;">
+                <div style="position: relative; width: 100%; max-width: 350px; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; border: 2px solid var(--border-color); transform: translateZ(30px); box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 20px rgba(56, 189, 248, 0.2);">
+                    <img src="assets/WhatsApp Image 2026-04-05 at 2.00.07 PM.jpeg" alt="Padma Priya" style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%;">
+                </div>
+            </div>
+
+            <div style="flex: 1.5; min-width: 350px; transform: translateZ(50px);">
+                <p class="text-muted" style="font-size: 1.2rem; line-height: 1.9;">
+                    I am a passionate <span class="highlight" style="font-weight: 600; color: #fff;">Full Stack Developer</span> and an Electronics and Communication Engineering student. I blend my knowledge of software engineering with hardware capabilities to create versatile, high-impact projects. My core focus spans across structured front-end architectures, scalable backends, and bridging physical devices with the digital world through IoT.
+                </p>
+                <div style="margin-top: 3rem;">
+                    <button class="action-btn primary-action" onclick="document.querySelector('[data-target=\'background\']').click()">
+                        <span>More About My Experience</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Areas (Restored Info + 3x 3D Tilt Cards) -->
+    <section class="experiences-section fade-in-up" style="margin-top: 8rem; margin-bottom: 8rem; text-align: center;">
+        <h2 class="section-title" style="justify-content: center;">Professional Areas</h2>
+        
+        <div class="exp-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 4rem; gap: 2rem;">
+            
+            <div class="exp-box glass about-card-3d static-card" onclick="document.querySelector('[data-target=\'frontend\']').click()" style="padding: 0; border-radius: 24px;">
+                <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 24px 24px 0 0;">
+                    <img src="assets/Frontend.png" alt="Frontend" style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s transform;">
+                </div>
+                <div class="card-shine"></div>
+                <div style="padding: 2.5rem; transform: translateZ(40px);">
+                    <div class="exp-icon" style="background: rgba(56, 189, 248, 0.1); color: var(--primary); margin-bottom: 1rem;"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+                    <h3 style="font-size: 1.8rem;">Frontend</h3>
+                </div>
+            </div>
+
+            <div class="exp-box glass about-card-3d static-card" onclick="document.querySelector('[data-target=\'backend\']').click()" style="padding: 0; border-radius: 24px;">
+                <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 24px 24px 0 0;">
+                    <img src="assets/Backend.png" alt="Backend" style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s transform;">
+                </div>
+                <div class="card-shine"></div>
+                <div style="padding: 2.5rem; transform: translateZ(40px);">
+                    <div class="exp-icon" style="background: rgba(129, 140, 248, 0.1); color: var(--secondary); margin-bottom: 1rem;"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div>
+                    <h3 style="font-size: 1.8rem;">Backend</h3>
+                </div>
+            </div>
+
+            <div class="exp-box glass about-card-3d static-card" onclick="document.querySelector('[data-target=\'iot\']').click()" style="padding: 0; border-radius: 24px;">
+                <div style="width: 100%; height: 200px; overflow: hidden; border-radius: 24px 24px 0 0;">
+                    <img src="assets/IOT.png" alt="IoT" style="width: 100%; height: 100%; object-fit: cover; transition: 0.5s transform;">
+                </div>
+                <div class="card-shine"></div>
+                <div style="padding: 2.5rem; transform: translateZ(40px);">
+                    <div class="exp-icon" style="background: rgba(52, 211, 153, 0.1); color: var(--accent); margin-bottom: 1rem;"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" height="1em" width="1em"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line></svg></div>
+                    <h3 style="font-size: 1.8rem;">IoT</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
