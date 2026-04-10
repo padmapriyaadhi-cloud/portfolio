@@ -4,8 +4,8 @@
   "description": "Professional Portfolio Website",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server . -p 8080",
-    "dev": "npx http-server . -p 8080"
+    "start": "npx http-server . -p 8080 -c-1",
+    "dev": "npx http-server . -p 8080 -c-1"
   },
   "author": "Padma Priya",
   "license": "ISC"

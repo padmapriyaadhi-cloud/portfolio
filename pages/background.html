@@ -2,36 +2,102 @@
     <!-- 1. Skills & Technologies (Now First) -->
     <section class="fade-in-up" style="animation-delay: 0.1s;">
         <h2 class="section-title">Skills & Technologies</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff;">
-                Programming Languages: Java, C#, JavaScript, Embedded C</div>
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff;">
-                Java & Enterprise Technologies: Core Java, J2EE, Spring Boot, Servlets, JDBC, RESTful APIs</div>
+        <!-- Row-based Skills Layout -->
+        <div class="skills-flow-container" style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; width: 100%; margin-bottom: 2rem;">
             
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff;">
-                .NET Technologies: ASP.NET, .NET Framework, ADO.NET, Entity Framework, LINQ</div>
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff">
-                Frontend Development: HTML5, CSS3, JavaScript, Angular</div>
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff">
-                Java Concepts & Data Structures: Object-Oriented Programming (OOP), Collections Framework (List, Set, Map),
-                Linked List, Queue, Multithreading, Exception Handling</div>    
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff;">
-                Database Technologies: MySQL, SQL Server, SQL Queries, CRUD Operations</div>
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff;">
-                Embedded & IoT: Arduino, Verilog HDL, Sensor Integration</div>
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff;">
-                Tools: Git, Postman, Eclipse, VS Code, ModelSim, Xilinx ISE</div>
-            <div class="glass"
-                style="padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1.1rem; color: #fff;">
-                Software Engineering: MVC Architecture, SDLC, API Testing, Database Integration</div>        
+            <!-- Row 1: Programming -->
+            <div class="skill-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div class="glass" style="flex: 0 0 200px; padding: 1.2rem; text-align: center; border-radius: 12px; font-weight: 600; font-size: 1.1rem; color: #fff; border-left: 4px solid var(--primary); letter-spacing: 1px;">
+                    Programming
+                </div>
+                <div style="color: var(--primary); display: flex; align-items: center; font-size: 2rem;">
+                    <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
+                    <span class="glass java-hover-btn" onclick="openJavaModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--primary)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Java</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">C#</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">C++</span>
+                </div>
+            </div>
+
+            <!-- Row 2: Frontend -->
+            <div class="skill-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div class="glass" style="flex: 0 0 200px; padding: 1.2rem; text-align: center; border-radius: 12px; font-weight: 600; font-size: 1.1rem; color: #fff; border-left: 4px solid var(--secondary); letter-spacing: 1px;">
+                    Frontend
+                </div>
+                <div style="color: var(--secondary); display: flex; align-items: center; font-size: 2rem;">
+                    <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">HTML5</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">CSS3</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">JavaScript</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Angular</span>
+                </div>
+            </div>
+
+            <!-- Row 3: Backend -->
+            <div class="skill-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div class="glass" style="flex: 0 0 200px; padding: 1.2rem; text-align: center; border-radius: 12px; font-weight: 600; font-size: 1.1rem; color: #fff; border-left: 4px solid var(--accent); letter-spacing: 1px;">
+                    Backend
+                </div>
+                <div style="color: var(--accent); display: flex; align-items: center; font-size: 2rem;">
+                    <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Spring Boot</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">ASP.NET</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">J2EE</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Servlets</span>
+                </div>
+            </div>
+
+            <!-- Row 4: Database -->
+            <div class="skill-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div class="glass" style="flex: 0 0 200px; padding: 1.2rem; text-align: center; border-radius: 12px; font-weight: 600; font-size: 1.1rem; color: #fff; border-left: 4px solid #fbbf24; letter-spacing: 1px;">
+                    Database
+                </div>
+                <div style="color: #fbbf24; display: flex; align-items: center; font-size: 2rem;">
+                    <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">MySQL</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">SQL Server</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">CRUD Operations</span>
+                </div>
+            </div>
+
+            <!-- Row 5: Embedded and IoT -->
+            <div class="skill-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div class="glass" style="flex: 0 0 200px; padding: 1.2rem; text-align: center; border-radius: 12px; font-weight: 600; font-size: 1.1rem; color: #fff; border-left: 4px solid #ec4899; letter-spacing: 1px;">
+                    Embedded & IoT
+                </div>
+                <div style="color: #ec4899; display: flex; align-items: center; font-size: 2rem;">
+                    <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Embedded C</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Arduino</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Verilog HDL</span>
+                </div>
+            </div>
+
+            <!-- Row 6: Tools -->
+            <div class="skill-row" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div class="glass" style="flex: 0 0 200px; padding: 1.2rem; text-align: center; border-radius: 12px; font-weight: 600; font-size: 1.1rem; color: #fff; border-left: 4px solid #8b5cf6; letter-spacing: 1px;">
+                    Tools
+                </div>
+                <div style="color: #8b5cf6; display: flex; align-items: center; font-size: 2rem;">
+                    <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Git</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Postman</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">VS Code</span>
+                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Eclipse</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -103,4 +169,21 @@
             </div>
         </div>
     </section>
+
+    <!-- Java Modal Pop-up -->
+    <div id="javaModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--primary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeJavaModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Java Capabilities
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--primary);">OOPs</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Collections</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">JDBC</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">JEE</span>
+            </div>
+        </div>
+    </div>
+
 </div>

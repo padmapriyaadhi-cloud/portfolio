@@ -149,13 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const portal = document.getElementById('portal-flash');
         if (!portal) return;
 
-        // Trigger portal burst
-        portal.style.animation = 'none';
-        void portal.offsetHeight;
-        portal.style.animation = 'portal-burst 0.8s ease-out forwards';
-
-        // 3D Vortex effect on content
-        mainContent.classList.add('vortex-out');
+        // Removing boom animation as requested, keep simple interaction logic if needed in future
     };
 
     // --- MOUSE PARTICLES ---
@@ -207,24 +201,17 @@ document.addEventListener('DOMContentLoaded', () => {
             mainContent.classList.remove('vortex-out', 'vortex-in');
             mainContent.style.opacity = '0';
             
-            // Fetch the page content
+            // Fetch the page content with cache busting
             try {
-                const response = await fetch(`pages/${page}.html`);
+                const response = await fetch(`pages/${page}.html?t=${new Date().getTime()}`, { cache: 'no-cache' });
                 
                 if (response.ok) {
                     const html = await response.text();
                     
-                    // Delay swapping to peak of portal effect if not initial load
+                    // Delay slightly for smooth swap
                     setTimeout(() => {
                         mainContent.innerHTML = html;
-                        
-                        if (!initial) {
-                            mainContent.classList.remove('vortex-out');
-                            mainContent.classList.add('vortex-in');
-                            setTimeout(() => {
-                                mainContent.classList.remove('vortex-in');
-                            }, 800);
-                        }
+
 
                         // Ensure visibility and finalize transitions
                         requestAnimationFrame(() => {
@@ -262,8 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3D INTERACTIVE EFFECTS ---
     const initDynamicEffects = () => {
-        // Exclude elements with 'static-card' from 3D tilt to keep them stable
-        const boxes = document.querySelectorAll('.exp-box:not(.static-card), .glass:not(.static-card), .about-card-3d:not(.static-card)');
+        // Exclude elements with 'static-card' to keep them stable
+        const boxes = document.querySelectorAll('.exp-box:not(.static-card), .about-card-3d:not(.static-card)');
         
         boxes.forEach(box => {
             box.addEventListener('mousemove', (e) => {
@@ -320,4 +307,50 @@ document.addEventListener('DOMContentLoaded', () => {
     initCrystals();
     initMouseParticles();
     loadPage('home', 0, true);
+});
+
+// Global Function for Skills Tab navigation (Required due to innerHTML string parsing dropping scripts)
+window.showSkillTab = function(tabId, btnElement) {
+    document.querySelectorAll('.skill-content-panel').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.skill-tab-btn').forEach(btn => {
+        btn.style.background = 'transparent';
+        btn.style.color = '#fff';
+        btn.classList.remove('active');
+    });
+    
+    document.getElementById('tab-' + tabId).style.display = 'block';
+    if(btnElement) {
+        btnElement.style.background = 'var(--primary)';
+        btnElement.style.color = '#000';
+        btnElement.classList.add('active');
+    }
+};
+
+// Global Functions for Java Modal
+window.openJavaModal = function() {
+    const modal = document.getElementById('javaModal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.style.opacity = '1';
+        if (modal.children[0]) modal.children[0].style.transform = 'translateY(0)';
+    }, 10);
+};
+
+window.closeJavaModal = function() {
+    const modal = document.getElementById('javaModal');
+    if (!modal) return;
+    modal.style.opacity = '0';
+    if (modal.children[0]) modal.children[0].style.transform = 'translateY(-20px)';
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+};
+
+// Close modal when clicking outside
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('javaModal');
+    if (event.target === modal) {
+        window.closeJavaModal();
+    }
 });
