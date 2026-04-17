@@ -588,6 +588,88 @@ body {
     box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
 }
 
+/* Preloader */
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.loader-graphics {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-circle {
+    position: absolute;
+    inset: 0;
+    border: 2px dashed rgba(56, 189, 248, 0.6);
+    border-radius: 50%;
+    animation: spin 4s linear infinite;
+}
+
+.loader-circle::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border: 2px solid transparent;
+    border-top-color: var(--secondary);
+    border-bottom-color: var(--secondary);
+    border-radius: 50%;
+    animation: spin 3s linear infinite reverse;
+}
+
+.loader-crystal {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(129, 140, 248, 0.4));
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: float-rotate-loader 2s infinite ease-in-out alternate;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+}
+
+.loader-text {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    animation: pulse-text 1.5s infinite;
+}
+
+@keyframes float-rotate-loader {
+    0% { transform: translateY(-10px) rotateY(0deg); }
+    100% { transform: translateY(10px) rotateY(180deg); }
+}
+
+@keyframes pulse-text {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; text-shadow: 0 0 15px var(--primary); }
+}
+
 /* ==== LAPTOP SUPPORT ==== */
 @media (max-width: 1440px) and (min-width: 1025px) {
     .sidebar {

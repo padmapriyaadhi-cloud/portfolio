@@ -360,18 +360,115 @@ body {
 
 .view-link:hover { color: var(--primary-hover); text-decoration: underline; }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .stats-grid { grid-template-columns: 1fr; }
+/* Professional Responsive Media Queries */
+
+/* --- Mobile Devices (Smartphones, up to 768px) --- */
+@media (max-width: 768px) {
+    .app-container { 
+        flex-direction: column !important; 
+    }
+    .sidebar {
+        width: 100% !important; 
+        height: auto !important; 
+        position: static !important;
+        padding: 1.5rem !important; 
+        border-right: none !important; 
+        border-bottom: 1px solid var(--border-color) !important;
+        animation: none !important;
+        z-index: 100 !important;
+    }
+    .profile-section { margin-bottom: 1.5rem !important; }
+    .nav-menu { 
+        flex-direction: row !important; 
+        flex-wrap: wrap !important; 
+        justify-content: center !important; 
+        gap: 0.5rem !important; 
+    }
+    .nav-btn { 
+        font-size: 0.85rem !important; 
+        padding: 0.6rem 0.8rem !important; 
+    }
+    .content-wrapper { margin-left: 0 !important; }
+    .main-content { 
+        margin-left: 0 !important; 
+        padding: 2rem 1.25rem !important; 
+        width: 100% !important;
+    }
+    .hero-title { font-size: 2.2rem !important; }
+    .stats-grid { grid-template-columns: 1fr !important; }
+    .skill-row { 
+        flex-direction: column !important; 
+        align-items: stretch !important; 
+        gap: 1rem !important; 
+    }
+    .skill-row > div:nth-child(2) { display: none !important; } /* Hide the decorative SVG arrow on mobile */
+    .skill-row > div:first-child { flex: auto !important; text-align: center !important; }
+    .site-footer { 
+        padding: 3rem 1.5rem !important; 
+        margin-top: 4rem !important; 
+    }
+    .site-footer > div { gap: 2rem !important; }
 }
 
-@media (max-width: 768px) {
-    .app-container { flex-direction: column; }
+/* --- Tablet Devices (iPads, Landscape, 769px to 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .app-container { flex-direction: column !important; }
     .sidebar {
-        width: 100%; height: auto; position: static;
-        padding: 1.5rem; border-right: none; border-bottom: 1px solid var(--border-color);
-        animation: none;
+        width: 100% !important; 
+        height: auto !important; 
+        position: static !important;
+        padding: 2rem !important; 
+        border-right: none !important; 
+        border-bottom: 1px solid var(--border-color) !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
     }
-    .main-content { margin-left: 0; padding: 2rem 1.5rem; }
-    .hero-title { font-size: 2.5rem; }
+    .profile-section { 
+        margin-bottom: 0 !important; 
+        display: flex !important; 
+        align-items: center !important; 
+        gap: 1.5rem !important; 
+        text-align: left !important;
+    }
+    .avatar { margin: 0 !important; width: 70px !important; height: 70px !important; }
+    .nav-menu { 
+        flex-direction: row !important; 
+        flex-wrap: wrap !important; 
+        justify-content: flex-end !important; 
+        gap: 0.5rem !important; 
+    }
+    .sidebar-contact { display: none !important; } /* Hide extra contact info to save space on tablet header */
+    .content-wrapper { margin-left: 0 !important; }
+    .main-content { 
+        padding: 3rem 2.5rem !important; 
+        max-width: 100% !important;
+    }
+    .hero-title { font-size: 2.8rem !important; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .skill-row { gap: 1.5rem !important; }
+    .site-footer { padding: 4rem 2rem !important; }
+}
+
+/* --- Laptops and PCs (1025px and up) --- */
+@media (min-width: 1025px) {
+    .sidebar {
+        width: 280px !important;
+    }
+    .content-wrapper {
+        margin-left: 280px !important; /* Perfect sync with sidebar width */
+    }
+    .main-content {
+        padding: 4rem 5rem !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+    /* Large monitors */
+    @media (min-width: 1440px) {
+        .sidebar { width: 320px !important; padding: 3rem 2rem !important; }
+        .content-wrapper { margin-left: 320px !important; }
+        .main-content { padding: 5rem 6rem !important; max-width: 1400px !important; }
+        .hero-title { font-size: 4rem !important; }
+    }
 }

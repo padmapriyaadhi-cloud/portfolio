@@ -1,3 +1,171 @@
+<style>
+/* Professional Responsive Media Queries for background.html */
+
+/* PC & Large Screens (Enhancements) */
+@media screen and (min-width: 1025px) {
+    .skill-row {
+        transition: transform 0.3s ease, background 0.3s ease !important;
+        padding: 1rem;
+        border-radius: 16px;
+    }
+    .skill-row:hover {
+        transform: translateX(10px) !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+    }
+    .skill-row > div:first-child {
+        flex: 0 0 220px !important;
+    }
+    .skill-row > div:last-child span:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+    }
+    .glass.static-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    .glass.static-card:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+    }
+}
+
+/* Tablet (Max Width 1024px) */
+@media screen and (max-width: 1024px) {
+    .skills-flow-container {
+        gap: 2rem !important;
+    }
+    .skill-row {
+        align-items: flex-start !important;
+        gap: 1.5rem !important;
+    }
+    .skill-row > div:first-child {
+        flex: 0 0 180px !important;
+        font-size: 1rem !important;
+        padding: 1rem !important;
+    }
+    .skill-row > div:nth-child(2) svg {
+        width: 30px !important;
+    }
+    .glass.static-card {
+        padding: 2rem !important;
+    }
+}
+
+/* Mobile (Max Width 768px) */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .skills-flow-container {
+        gap: 1.5rem !important;
+    }
+    
+    .skill-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1.2rem !important;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 1.5rem !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .skill-row > div:first-child {
+        flex: none !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-left: none !important;
+        border-bottom: 4px solid !important;
+        border-radius: 12px !important;
+        padding: 1rem 0 !important;
+    }
+    
+    .skill-row:nth-child(1) > div:first-child { border-bottom-color: var(--primary) !important; }
+    .skill-row:nth-child(2) > div:first-child { border-bottom-color: var(--secondary) !important; }
+    .skill-row:nth-child(3) > div:first-child { border-bottom-color: var(--accent) !important; }
+    .skill-row:nth-child(4) > div:first-child { border-bottom-color: #fbbf24 !important; }
+    .skill-row:nth-child(5) > div:first-child { border-bottom-color: #ec4899 !important; }
+    .skill-row:nth-child(6) > div:first-child { border-bottom-color: #8b5cf6 !important; }
+
+    /* Hide arrow on mobile */
+    .skill-row > div:nth-child(2) {
+        display: none !important;
+    }
+    
+    /* Center skill tags on mobile */
+    .skill-row > div:last-child {
+        justify-content: center !important;
+    }
+    
+    .skill-row > div:last-child span {
+        font-size: 0.95rem !important;
+        padding: 0.7rem 1.2rem !important;
+    }
+
+    /* Educational Background & Experience Cards */
+    .glass.static-card {
+        padding: 1.5rem !important;
+    }
+    
+    /* Target the flex container inside timeline items */
+    .glass.static-card > div > div:nth-of-type(2) {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+    
+    .glass.static-card h3 {
+        font-size: 1.25rem !important;
+        white-space: normal !important;
+        line-height: 1.4 !important;
+    }
+    
+    .text-muted {
+        font-size: 0.95rem !important;
+    }
+
+    /* Modals */
+    div[id$="Modal"] > div.glass {
+        padding: 2rem 1.5rem !important;
+        width: 90% !important;
+    }
+    
+    div[id$="Modal"] h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+    
+    div[id$="Modal"] > div.glass > div {
+        justify-content: center !important;
+    }
+}
+
+/* Small Mobile (Max Width 480px) */
+@media screen and (max-width: 480px) {
+    .skill-row > div:last-child span {
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .glass.static-card h3 {
+        font-size: 1.15rem !important;
+    }
+    
+    .glass.static-card {
+        padding: 1.2rem !important;
+    }
+    
+    .glass.static-card > div {
+        padding-left: 1.5rem !important;
+    }
+    
+    /* Center text on very small screens for experience text */
+    .glass.static-card > div > p {
+        font-size: 0.9rem !important;
+    }
+}
+</style>
 <div class="page-container">
     <!-- 1. Skills & Technologies (Now First) -->
     <section class="fade-in-up" style="animation-delay: 0.1s;">
@@ -14,9 +182,9 @@
                     <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
-                    <span class="glass java-hover-btn" onclick="openJavaModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--primary)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Java</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">C#</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">C++</span>
+                    <span class="glass" onclick="openCoreConceptsModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--primary)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Core Concepts</span>
+                    <span class="glass" onclick="openProblemSolvingModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--primary)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Problem Solving</span>
+                    <span class="glass" onclick="openCodingLanguageModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--primary)'; this.style.borderColor='var(--primary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Coding Language</span>
                 </div>
             </div>
 
@@ -29,10 +197,10 @@
                     <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">HTML5</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">CSS3</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">JavaScript</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Angular</span>
+                    <span class="glass" onclick="openCoreWebModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--secondary)'; this.style.borderColor='var(--secondary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Core Web</span>
+                    <span class="glass" onclick="openUIDevelopmentModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--secondary)'; this.style.borderColor='var(--secondary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">UI Development</span>
+                    <span class="glass" onclick="openFrameworksModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--secondary)'; this.style.borderColor='var(--secondary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Frameworks</span>
+                    <span class="glass" onclick="openTechnicalEnhancementsModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--secondary)'; this.style.borderColor='var(--secondary)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Technical Enhancements</span>
                 </div>
             </div>
 
@@ -45,10 +213,9 @@
                     <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Spring Boot</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">ASP.NET</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">J2EE</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Servlets</span>
+                    <span class="glass" onclick="openBackendFrameworksModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--accent)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Backend Frameworks</span>
+                    <span class="glass" onclick="openBackendConceptsModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--accent)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Backend Concepts</span>
+                    <span class="glass" onclick="openAPIHandlingModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px var(--accent)'; this.style.borderColor='var(--accent)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">API Handling</span>
                 </div>
             </div>
 
@@ -61,9 +228,9 @@
                     <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">MySQL</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">SQL Server</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">CRUD Operations</span>
+                    <span class="glass" onclick="openDatabasesModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #fbbf24'; this.style.borderColor='#fbbf24';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Databases</span>
+                    <span class="glass" onclick="openOperationsModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #fbbf24'; this.style.borderColor='#fbbf24';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Operations</span>
+                    <span class="glass" onclick="openIntegrationModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #fbbf24'; this.style.borderColor='#fbbf24';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Integration</span>
                 </div>
             </div>
 
@@ -77,8 +244,9 @@
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
                     <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Embedded C</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Arduino</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Verilog HDL</span>
+                    <span class="glass" onclick="openPlatformsModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #ec4899'; this.style.borderColor='#ec4899';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Platforms</span>
+                    <span class="glass" onclick="openHardwareConceptsModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #ec4899'; this.style.borderColor='#ec4899';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Hardware Concepts</span>
+                     <span class="glass" onclick="openDesignModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #ec4899'; this.style.borderColor='#ec4899';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Design</span>
                 </div>
             </div>
 
@@ -91,10 +259,9 @@
                     <svg width="40" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 1rem; flex: 1; align-items: center;">
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Git</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Postman</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">VS Code</span>
-                    <span class="glass" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500;">Eclipse</span>
+                    <span class="glass" onclick="openVersionControlModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #8b5cf6'; this.style.borderColor='#8b5cf6';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Version Control</span>
+                    <span class="glass" onclick="openDevelopmentToolsModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #8b5cf6'; this.style.borderColor='#8b5cf6';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Development Tools</span>
+                    <span class="glass" onclick="openBuildDebugModal()" style="padding: 0.8rem 1.6rem; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: 0.3s;" onmouseover="this.style.boxShadow='0 0 15px #8b5cf6'; this.style.borderColor='#8b5cf6';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='';">Build/Debug</span>
                 </div>
             </div>
 
@@ -182,6 +349,281 @@
                 <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Collections</span>
                 <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">JDBC</span>
                 <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">JEE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Concepts Modal Pop-up -->
+    <div id="coreConceptsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--primary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeCoreConceptsModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Core Concepts
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--primary);">OOPs</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Data Structures</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Algorithms</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Solving Modal Pop-up -->
+    <div id="problemSolvingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--primary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeProblemSolvingModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Problem Solving
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--primary);">Arrays</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Strings</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Recursion</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coding Language Modal Pop-up -->
+    <div id="codingLanguageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--primary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeCodingLanguageModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Coding Language
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--primary);">Java</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">C#</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">C++</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Python</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Web Modal Pop-up -->
+    <div id="coreWebModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--secondary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeCoreWebModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Core Web
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--secondary);">HTML5</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">CSS3</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- UI Development Modal Pop-up -->
+    <div id="uiDevelopmentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--secondary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeUIDevelopmentModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                UI Development
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--secondary);">Responsive Design</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Flexbox</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Grid</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Frameworks Modal Pop-up -->
+    <div id="frameworksModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--secondary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeFrameworksModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Frameworks
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--secondary);">Angular</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Enhancements Modal Pop-up -->
+    <div id="technicalEnhancementsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--secondary); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeTechnicalEnhancementsModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Technical Enhancements
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--secondary);">DOM Manipulation</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">REST API Integration</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backend Frameworks Modal Pop-up -->
+    <div id="backendFrameworksModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--accent); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeBackendFrameworksModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Backend Frameworks
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--accent);">Spring Boot</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">ASP.NET</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backend Concepts Modal Pop-up -->
+    <div id="backendConceptsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--accent); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeBackendConceptsModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Backend Concepts
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--accent);">REST APIs</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">MVC Architecture</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">J2EE</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Servlets</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Handling Modal Pop-up -->
+    <div id="apiHandlingModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid var(--accent); max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeAPIHandlingModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: var(--accent); font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                API Handling
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid var(--accent);">Request/Response</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">JSON</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Postman Testing</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Databases Modal Pop-up -->
+    <div id="databasesModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #fbbf24; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeDatabasesModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #fbbf24; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Databases
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #fbbf24;">MySQL</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">MS SQL Server</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Operations Modal Pop-up -->
+    <div id="operationsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #fbbf24; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeOperationsModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #fbbf24; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Operations
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #fbbf24;">CRUD</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Integration Modal Pop-up -->
+    <div id="integrationModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #fbbf24; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeIntegrationModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #fbbf24; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Integration
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #fbbf24;">JDBC</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Platforms Modal Pop-up -->
+    <div id="platformsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #ec4899; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closePlatformsModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #ec4899; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Platforms
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #ec4899;">Arduino</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">ESP 32</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Raspberry pi</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hardware Concepts Modal Pop-up -->
+    <div id="hardwareConceptsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #ec4899; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeHardwareConceptsModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #ec4899; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Hardware Concepts
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #ec4899;">Sensors</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Microcontrollers</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Modal Pop-up -->
+    <div id="designModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #ec4899; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeDesignModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #ec4899; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Design
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #ec4899;">Verilog HDL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Version Control Modal Pop-up -->
+    <div id="versionControlModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #8b5cf6; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeVersionControlModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #8b5cf6; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Version Control
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #8b5cf6;">Git</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">GitHub</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Development Tools Modal Pop-up -->
+    <div id="developmentToolsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #8b5cf6; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeDevelopmentToolsModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #8b5cf6; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Development Tools
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #8b5cf6;">VS Code</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Eclipse</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Antigravity</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Lovable</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Visual Studio 2022</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Build/Debug Modal Pop-up -->
+    <div id="buildDebugModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease;">
+        <div class="glass" style="padding: 2.5rem; border-radius: 16px; border-top: 4px solid #8b5cf6; max-width: 500px; width: 90%; position: relative; transform: translateY(-20px); transition: transform 0.3s ease;">
+            <button onclick="closeBuildDebugModal()" style="position: absolute; top: 1rem; right: 1.5rem; background: transparent; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; opacity: 0.7; transition: 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">&times;</button>
+            <h3 style="color: #8b5cf6; font-size: 1.5rem; margin-bottom: 1.5rem; margin-top: 0; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                Build/Debug
+            </h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500; border-left: 2px solid #8b5cf6;">Maven</span>
+                <span class="glass" style="padding: 0.6rem 1.4rem; border-radius: 25px; font-size: 1rem; font-weight: 500;">Debugging Tools</span>
             </div>
         </div>
     </div>

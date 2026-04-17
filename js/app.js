@@ -306,7 +306,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initConstellation();
     initCrystals();
     initMouseParticles();
-    loadPage('home', 0, true);
+    
+    // Preloader Logic (5 seconds)
+    const preloader = document.getElementById('site-preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 800); // match CSS transition duration
+            loadPage('home', 0, true);
+        }, 5000);
+    } else {
+        loadPage('home', 0, true);
+    }
 });
 
 // Global Function for Skills Tab navigation (Required due to innerHTML string parsing dropping scripts)
@@ -347,10 +360,117 @@ window.closeJavaModal = function() {
     }, 300);
 };
 
+// Global Functions for Core Concepts Modal
+window.openCoreConceptsModal = function() {
+    const modal = document.getElementById('coreConceptsModal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.style.opacity = '1';
+        if (modal.children[0]) modal.children[0].style.transform = 'translateY(0)';
+    }, 10);
+};
+
+window.closeCoreConceptsModal = function() {
+    const modal = document.getElementById('coreConceptsModal');
+    if (!modal) return;
+    modal.style.opacity = '0';
+    if (modal.children[0]) modal.children[0].style.transform = 'translateY(-20px)';
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+};
+
+// Helper to toggle modals
+window.toggleModal = function(modalId, show) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    if (show) {
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.style.opacity = '1';
+            if (modal.children[0]) modal.children[0].style.transform = 'translateY(0)';
+        }, 10);
+    } else {
+        modal.style.opacity = '0';
+        if (modal.children[0]) modal.children[0].style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    }
+};
+
+window.openProblemSolvingModal = () => window.toggleModal('problemSolvingModal', true);
+window.closeProblemSolvingModal = () => window.toggleModal('problemSolvingModal', false);
+
+window.openCodingLanguageModal = () => window.toggleModal('codingLanguageModal', true);
+window.closeCodingLanguageModal = () => window.toggleModal('codingLanguageModal', false);
+
+window.openCoreWebModal = () => window.toggleModal('coreWebModal', true);
+window.closeCoreWebModal = () => window.toggleModal('coreWebModal', false);
+
+window.openUIDevelopmentModal = () => window.toggleModal('uiDevelopmentModal', true);
+window.closeUIDevelopmentModal = () => window.toggleModal('uiDevelopmentModal', false);
+
+window.openFrameworksModal = () => window.toggleModal('frameworksModal', true);
+window.closeFrameworksModal = () => window.toggleModal('frameworksModal', false);
+
+window.openTechnicalEnhancementsModal = () => window.toggleModal('technicalEnhancementsModal', true);
+window.closeTechnicalEnhancementsModal = () => window.toggleModal('technicalEnhancementsModal', false);
+
+window.openBackendFrameworksModal = () => window.toggleModal('backendFrameworksModal', true);
+window.closeBackendFrameworksModal = () => window.toggleModal('backendFrameworksModal', false);
+
+window.openBackendConceptsModal = () => window.toggleModal('backendConceptsModal', true);
+window.closeBackendConceptsModal = () => window.toggleModal('backendConceptsModal', false);
+
+window.openAPIHandlingModal = () => window.toggleModal('apiHandlingModal', true);
+window.closeAPIHandlingModal = () => window.toggleModal('apiHandlingModal', false);
+
+window.openDatabasesModal = () => window.toggleModal('databasesModal', true);
+window.closeDatabasesModal = () => window.toggleModal('databasesModal', false);
+
+window.openOperationsModal = () => window.toggleModal('operationsModal', true);
+window.closeOperationsModal = () => window.toggleModal('operationsModal', false);
+
+window.openIntegrationModal = () => window.toggleModal('integrationModal', true);
+window.closeIntegrationModal = () => window.toggleModal('integrationModal', false);
+
+window.openPlatformsModal = () => window.toggleModal('platformsModal', true);
+window.closePlatformsModal = () => window.toggleModal('platformsModal', false);
+
+window.openHardwareConceptsModal = () => window.toggleModal('hardwareConceptsModal', true);
+window.closeHardwareConceptsModal = () => window.toggleModal('hardwareConceptsModal', false);
+
+window.openDesignModal = () => window.toggleModal('designModal', true);
+window.closeDesignModal = () => window.toggleModal('designModal', false);
+
+window.openVersionControlModal = () => window.toggleModal('versionControlModal', true);
+window.closeVersionControlModal = () => window.toggleModal('versionControlModal', false);
+
+window.openDevelopmentToolsModal = () => window.toggleModal('developmentToolsModal', true);
+window.closeDevelopmentToolsModal = () => window.toggleModal('developmentToolsModal', false);
+
+window.openBuildDebugModal = () => window.toggleModal('buildDebugModal', true);
+window.closeBuildDebugModal = () => window.toggleModal('buildDebugModal', false);
+
 // Close modal when clicking outside
 window.addEventListener('click', function(event) {
-    const modal = document.getElementById('javaModal');
-    if (event.target === modal) {
-        window.closeJavaModal();
-    }
+    if (event.target === document.getElementById('javaModal')) window.closeJavaModal();
+    if (event.target === document.getElementById('coreConceptsModal')) window.closeCoreConceptsModal();
+    
+    const modals = [
+        'problemSolvingModal', 'codingLanguageModal', 'coreWebModal', 
+        'uiDevelopmentModal', 'frameworksModal', 'technicalEnhancementsModal',
+        'backendFrameworksModal', 'backendConceptsModal', 'apiHandlingModal',
+        'databasesModal', 'operationsModal', 'integrationModal',
+        'platformsModal', 'hardwareConceptsModal', 'designModal',
+        'versionControlModal', 'developmentToolsModal', 'buildDebugModal'
+    ];
+    
+    modals.forEach(modalId => {
+        if (event.target === document.getElementById(modalId)) {
+            window.toggleModal(modalId, false);
+        }
+    });
 });
